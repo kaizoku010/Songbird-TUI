@@ -1,0 +1,12 @@
+# Exclude files from crates.io publish
+target/
+.git/
+.github/
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+PUBLISHING_GUIDE.md
+.songbird/
