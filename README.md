@@ -2,7 +2,7 @@
 
 Songbird is a TUI music player built with Rust. It scans the assigned music folder recursively, reads metadata, and plays tracks through `mpv` while keeping the interface fast and readable in a terminal.
 
-![Songbird running in a terminal](screenshots/songbird.png)
+![Songbird running in a terminal](screenshots/songbird.gif)
 
 ## Features
 

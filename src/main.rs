@@ -512,10 +512,18 @@ fn draw_library(frame: &mut Frame, lib: &Library, area: Rect) {
         .split(area);
 
     // Header
+    let title = "♫ SONGBIRD";
+    let stats = format!("{} tracks · {} artists · {} albums", lib.tracks.len(), lib.artists.len(), lib.albums.len());
+    // Pad from the real widths so the stats stay flush with the right border
+    // instead of being clipped by a fixed guess.
+    let gap = (vertical[0].width as usize)
+        .saturating_sub(2)
+        .saturating_sub(title.chars().count())
+        .saturating_sub(stats.chars().count());
     let header = Line::from(vec![
-        Span::styled("♫ SONGBIRD", Style::default().fg(BRIGHT_GREEN).add_modifier(Modifier::BOLD)),
-        Span::raw(" ".repeat(vertical[0].width.saturating_sub(18) as usize)),
-        Span::styled(format!("{} tracks · {} artists · {} albums", lib.tracks.len(), lib.artists.len(), lib.albums.len()), Style::default().fg(Color::DarkGray)),
+        Span::styled(title, Style::default().fg(BRIGHT_GREEN).add_modifier(Modifier::BOLD)),
+        Span::raw(" ".repeat(gap)),
+        Span::styled(stats, Style::default().fg(Color::DarkGray)),
     ]);
     frame.render_widget(Paragraph::new(header).block(rounded_block("")), vertical[0]);
 
