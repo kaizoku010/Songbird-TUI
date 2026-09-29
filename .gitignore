@@ -1,12 +1,13 @@
 # Rust
 target/
-Cargo.lock
 **/*.rs.bk
 *.pdb
 
 # IDE
 .vscode/
 .idea/
+.history/
+.lh/
 *.swp
 *.swo
 *~

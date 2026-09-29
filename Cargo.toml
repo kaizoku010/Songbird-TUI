@@ -10,6 +10,7 @@ documentation = "https://docs.rs/songbird-tui"
 readme = "README.md"
 keywords = ["music", "player", "tui", "terminal", "rust"]
 categories = ["command-line-utilities", "multimedia"]
+exclude = ["screenshots/", ".history/", ".lh/"]
 
 [[bin]]
 name = "songbird"

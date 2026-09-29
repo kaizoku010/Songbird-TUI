@@ -4,6 +4,9 @@ target/
 .github/
 .vscode/
 .idea/
+.history/
+.lh/
+screenshots/
 *.swp
 *.swo
 .DS_Store

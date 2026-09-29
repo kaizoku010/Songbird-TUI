@@ -1,8 +1,8 @@
 # Songbird
 
-*Use my Markdown preview app for readabily, just copy this and paste it here: https://markdownviewer-fawn.vercel.app/*
+Songbird is a TUI music player built with Rust. It scans the assigned music folder recursively, reads metadata, and plays tracks through `mpv` while keeping the interface fast and readable in a terminal.
 
-Songbird is a TUI music player built with Rust, scans the assigned music folder recursively, reads metadata, and plays tracks through `mpv` while keeping the interface fast and readable in a terminal.
+![Songbird running in a terminal](screenshots/songbird.png)
 
 ## Features
 
@@ -26,19 +26,31 @@ Before running the project, make sure the following are installed:
 
 ## Installation
 
-1. Clone the repository:
+### From crates.io
 
 ```bash
-cd songbird
+cargo install songbird-tui
 ```
 
-2. Install the Rust dependencies via Cargo:
+This installs a binary called `songbird`. Make sure `mpv` is on your `PATH` before running it.
+
+### From source
 
 ```bash
+git clone https://github.com/kaizoku010/Songbird-TUI.git
+cd Songbird-TUI
 cargo build --release
 ```
 
 ## Running the app
+
+If you installed from crates.io:
+
+```bash
+songbird
+```
+
+If you built from source:
 
 ```bash
 cargo run --release
@@ -47,15 +59,12 @@ cargo run --release
 You can also run the built binary directly:
 
 ```bash
-cargo build --release
 ./target/release/songbird
 ```
 
 On Windows:
 
 ```powershell
-cargo run --release
-# or
 .\target\release\songbird.exe
 ```
 
@@ -100,6 +109,8 @@ src/
   player.rs        - mpv playback lifecycle and IPC logic
   scanner.rs       - recursive file discovery and metadata scanning
 Cargo.toml         - Rust package and dependencies
+Cargo.lock         - pinned dependency versions for the binary
+LICENSE            - ISC license text
 README.md          - project documentation
 ```
 
@@ -239,4 +250,4 @@ The release binary is named `songbird` and can be distributed or run directly fr
 
 ## License
 
-This project is licensed under the ISC license, as defined in the Cargo manifest.
+This project is licensed under the ISC license. See [LICENSE](LICENSE) for the full text.
